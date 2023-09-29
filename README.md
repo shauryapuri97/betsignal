@@ -40,4 +40,4 @@ I tried to use figma to come up with a minimal logo for the platform.
 3. Add pagination on blotters for users to be able to load more rows.
 4. Add Filtering in blotters that fetch data using params.
 5. Use a graphing library such as React Flow / Highcharts to be able to show account / order info to users in a more intuitive way.
-6. Add responsiveness to the UI.
+6. Add responsiveness to the blotter.
