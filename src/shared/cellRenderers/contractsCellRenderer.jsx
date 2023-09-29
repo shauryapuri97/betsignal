@@ -21,8 +21,8 @@ const contractsCellRenderer = (params) => {
             <Box
               sx={{ display: "flex", gap: 1, justifyContent: "space-around" }}
             >
-              <Typography variant="caption">{bidBackStake}</Typography>
-              <Typography variant="caption">{offerBackStake}</Typography>
+              <Typography variant="caption">{`£${bidBackStake}`}</Typography>
+              <Typography variant="caption">{`£${offerBackStake}`}</Typography>
             </Box>
           </Box>
         )
