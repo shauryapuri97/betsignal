@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
-import { selectRowData, selectIsLoading } from "../../store/slices/configSlice";
+import {
+  selectRowData,
+  selectIsLoading,
+  clearRowData,
+} from "../../store/slices/configSlice";
 import { Skeleton } from "@mui/material";
+import { batch } from "react-redux";
 
 const Blotter = ({ fetchRequest, columns, pageSize = 10 }) => {
   const dispatch = useDispatch();
@@ -11,7 +16,10 @@ const Blotter = ({ fetchRequest, columns, pageSize = 10 }) => {
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
-    dispatch(fetchRequest);
+    batch(() => {
+      dispatch(clearRowData());
+      dispatch(fetchRequest);
+    });
   }, []);
 
   return !isLoading ? (

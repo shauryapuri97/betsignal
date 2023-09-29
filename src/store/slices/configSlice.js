@@ -12,6 +12,9 @@ const configSlice = createSlice({
     setSelectedEvent: (state, action) => {
       state.selectedEvent = action.payload;
     },
+    clearRowData: (state) => {
+      state.data = [];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -28,7 +31,7 @@ const configSlice = createSlice({
   },
 });
 
-export const { setSelectedEvent } = configSlice.actions;
+export const { setSelectedEvent, clearRowData } = configSlice.actions;
 
 export const selectRowData = (state) => state.config.data;
 export const selectSelectedEvent = (state) => state.config.selectedEvent;
